@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+rectangle Gui{
+interface fileOptionsMenu{
+saveListButton
+loadListButton
+}
+interface editOptionsMenu{
+deleteItemButton
+clearListButton
+editItemDescButton
+editItemDateButton
+}
+interface sortOptionsMenu{
+sortByCompleteButton
+sortByIncompleteButton
+showAllButton
+}
+}
+rectangle Application{
+Class Main
+Class Controller{
+addItemMethod
+removeItemMethod
+removeAllItemsMethod
+editItemDescMethod
+editItemDateMethod
+markItemMethod
+displayAllItemsMethod
+displayCompletedMethod
+displayIncompleteMethod
+}
+Class fileOptions{
+saveListMethod
+loadListMethod
+}
+}
+
+Main -> Gui :Start App
+@enduml

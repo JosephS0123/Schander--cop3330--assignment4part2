@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.HelloController">
+   <center>
+      <SplitPane dividerPositions="0.1575342465753425" orientation="VERTICAL">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="919.0">
+               <children>
+                  <Button fx:id="addButton" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#addItem" prefHeight="26.0" prefWidth="69.0" text="New Item" />
+                  <DatePicker fx:id="dateButton" layoutX="196.0" layoutY="3.0" prefHeight="26.0" prefWidth="169.0" />
+                  <TextField fx:id="itemDescText" layoutX="378.0" layoutY="3.0" prefHeight="26.0" prefWidth="517.0" promptText="Enter Item Description Here..." />
+                  <Separator layoutX="154.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="6.0" />
+                  <Separator layoutX="372.0" layoutY="-8.0" orientation="VERTICAL" prefHeight="41.0" prefWidth="6.0" />
+                  <Button fx:id="completeButton" layoutX="90.0" layoutY="3.0" mnemonicParsing="false" onAction="#markComplete" prefHeight="26.0" prefWidth="98.0" text="Mark Item" />
+               </children>
+            </AnchorPane>
+            <ListView fx:id="listView" prefHeight="193.0" prefWidth="922.0" />
+         </items>
+      </SplitPane>
+   </center>
+   <top>
+      <MenuBar prefHeight="48.0" prefWidth="922.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="New List" />
+                  <MenuItem mnemonicParsing="false" text="Load LIst" />
+                  <MenuItem mnemonicParsing="false" text="Load Several LIsts" />
+                  <MenuItem mnemonicParsing="false" text="Save List" />
+                  <MenuItem mnemonicParsing="false" text="Save All Lists" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="removeItem" mnemonicParsing="false" onAction="#removeItem" text="Remove Item" />
+                  <MenuItem fx:id="clearList" mnemonicParsing="false" onAction="#clearList" text="Clear List" />
+                  <MenuItem fx:id="editDesc" mnemonicParsing="false" onAction="#editDesc" text="Edit Item Description" />
+                  <MenuItem fx:id="editDate" mnemonicParsing="false" onAction="#editDate" text="Edit Item Date" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Sort">
+              <items>
+                <MenuItem fx:id="showAll" mnemonicParsing="false" onAction="#showAll" text="Show All Items" />
+                  <MenuItem fx:id="sortComplete" mnemonicParsing="false" onAction="#showComplete" text="Sort By Completed" />
+                  <MenuItem fx:id="sortIncomplete" mnemonicParsing="false" onAction="#showIncomplete" text="Sort By Incomplete" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
