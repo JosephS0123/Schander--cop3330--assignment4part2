@@ -1,7 +1,7 @@
 package ucf.assignments;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-// These tests will most likely be separated but for simplicity's sake I will have all of them here
+// none of the methods need a J unit test since they return nothing, this is the pseudocode for if it was possible.
 public class AppTest {
     @Test
     public void Test() {
